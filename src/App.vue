@@ -7,6 +7,7 @@
     <router-link to="/slot">插槽</router-link>  |
     <router-link to="/component">动态组件</router-link>  |
     <router-link to="/async-comp">异步组件</router-link>  |
+    <router-link to="/setup">Setup</router-link>  |
   </p>
 
   <router-view></router-view>
