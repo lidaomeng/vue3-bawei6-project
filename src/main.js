@@ -7,12 +7,15 @@ import 'element-plus/dist/index.css'
 
 // 导入vue-router
 import router from './router'
+// 导入vuex
+import store from './store'
 
 // 导入VueEcharts
 import VueEcharts from '@/components/VueEcharts'
 
 const app = createApp(App)
 app.use(router) // 使用vue-router插件
+app.use(store) // 使用vue-router插件
 app.use(ElementPlus) // 使用vue-router插件'
 app.component('v-charts', VueEcharts)
 app.mount('#app')

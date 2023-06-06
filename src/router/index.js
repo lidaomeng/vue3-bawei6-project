@@ -9,6 +9,7 @@ import AsyncCompView from '@/views/AsyncCompView.vue'
 import SetupView from '@/views/SetupView.vue'
 import OtherReactiveView from '@/views/OtherReactiveView.vue'
 import DataV from '@/views/DataV'
+import TodoList from '@/views/TodoList'
 
 // 1. 定义一些路由
 const routes = [
@@ -21,6 +22,7 @@ const routes = [
     { path: '/setup', component: SetupView },
     { path: '/other', component: OtherReactiveView },
     { path: '/data-v', component: DataV },
+    { path: '/todolist', component: TodoList },
 ]
 
 // 2. 创建路由实例并传递 `routes` 配置
