@@ -1,43 +1,47 @@
 <template>
-    <div style="height: 400px;width: 100%;">
-        <v-charts :options="options"></v-charts>
+    <div class="analyze">
+        <el-row :gutter="12">
+            <el-col :span="6">
+                <el-card shadow="always"><card-a></card-a></el-card>
+            </el-col>
+            <el-col :span="6">
+                <el-card shadow="always"> <card-b></card-b> </el-card>
+            </el-col>
+            <el-col :span="6">
+                <el-card shadow="always"> <card-c></card-c> </el-card>
+            </el-col>
+            <el-col :span="6">
+                <el-card shadow="always"> <card-d></card-d> </el-card>
+            </el-col>
+        </el-row>
     </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-
+import CardA from './components/CardA.vue';
+import CardB from './components/CardB.vue';
+import CardC from './components/CardC.vue';
+import CardD from './components/CardD.vue';
 export default {
     name: 'Index',
-
+    components: {
+        CardA,
+        CardB,
+        CardC,
+        CardD
+    },
     setup() {
-        const options = ref()
-        options.value = {
-            title: {
-                text: 'ECharts 入门示例'
-            },
-            tooltip: {},
-            legend: {
-                data: ['销量']
-            },
-            xAxis: {
-                data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
-            },
-            yAxis: {},
-            series: [
-                {
-                    name: '销量',
-                    type: 'bar',
-                    data: [5, 20, 36, 10, 10, 20]
-                }
-            ]
-        };
 
-        return {
-            options
-        }
     }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.analyze {
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    padding: 20px;
+    box-sizing: border-box;
+}
+</style>

@@ -11,6 +11,7 @@
       <el-button><router-link to="/setup">Setup</router-link></el-button>
       <el-button><router-link to="/other">other响应式</router-link></el-button>
       <el-button><router-link to="/todolist">TodoList</router-link></el-button>
+      <el-button><router-link to="/data-v">Echarts</router-link></el-button>
     </p>
 
     <router-view></router-view>
@@ -27,6 +28,9 @@ export default {
 <style>
 html, body, #app {
   width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 #app {
   margin-bottom: 500px;
