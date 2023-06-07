@@ -10,6 +10,7 @@ import SetupView from '@/views/SetupView.vue'
 import OtherReactiveView from '@/views/OtherReactiveView.vue'
 import DataV from '@/views/DataV'
 import TodoList from '@/views/TodoList'
+import BMap from '@/views/BMap'
 
 // 1. 定义一些路由
 const routes = [
@@ -23,6 +24,7 @@ const routes = [
     { path: '/other', component: OtherReactiveView },
     { path: '/data-v', component: DataV },
     { path: '/todolist', component: TodoList },
+    { path: '/bmap', component: BMap },
 ]
 
 // 2. 创建路由实例并传递 `routes` 配置
