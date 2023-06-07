@@ -50,7 +50,7 @@ export default {
         color: #333;
     }
     .chart {
-        height: 100px;
+        height: 50px;
     }
 }
 </style>

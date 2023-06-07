@@ -1,6 +1,6 @@
 <template>
     <div class="card-b">
-        <common-card title="总销售额" salesValue="¥ 126,560" footer="日销售额￥12,423">
+        <common-card title="访问量" salesValue="8,846" footer="日访问量1,234">
             <div class="content">
                 <v-charts :options="options"></v-charts>
             </div>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 import CommonCard from '@/components/CommonCard'
 export default {
@@ -18,24 +18,39 @@ export default {
         CommonCard
     },
     setup() {
-        const options = ref()
+        const options = ref({})
+
         options.value = {
-            
-            tooltip: {},
+            color: ['purple'],
             xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
                 show: false,
-                data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+                boundaryGap: false
             },
             yAxis: {
-                show: false,
+                type: 'value',
+                show: false
             },
             series: [
                 {
-                    name: '销量',
-                    type: 'bar',
-                    data: [5, 20, 36, 10, 10, 20]
+                    data: [150, 900, 100, 800, 10, 1000, 230, 224, 218, 1200, 135, 147, 260],
+                    type: 'line',
+                    smooth: true, // 平滑
+                    itemStyle: {
+                        opacity: 0
+                    },
+                    areaStyle: {
+                        color: '#c060ff'
+                    }
                 }
-            ]
+            ],
+            grid: {
+                top: 0,
+                bottom: 10,
+                left: 0,
+                right: 0,
+            }
         };
 
         return {
@@ -51,6 +66,7 @@ export default {
     color: #333;
     margin: 10px 0;
 }
+
 .card-b {
     height: 100%;
     width: 100%;
