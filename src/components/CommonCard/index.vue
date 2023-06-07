@@ -1,7 +1,9 @@
 <template>
     <div class="card">
         <div class="title">{{ title }}</div>
-        <div class="salesValue">{{ salesValue }}</div>
+        <div class="salesValue">
+            <count-to :startVal='startVal' :endVal='endVal' :duration='8000'></count-to>
+        </div>
         <div class="chart">
             <slot></slot>
         </div>
@@ -11,6 +13,7 @@
 </template>
 
 <script>
+import {ref} from 'vue'
 export default {
     name: 'CommonCard',
     props: {
@@ -19,7 +22,7 @@ export default {
             default: ''
         },
         salesValue: {
-            type: String,
+            type: [String, Number],
             default: ''
         },
         footer: {
@@ -28,7 +31,18 @@ export default {
         },
     },
     setup() {
+        const startVal = ref(0)
+        const endVal = ref(1000)
 
+        setInterval(() => {
+            startVal.value = endVal.value
+            endVal.value += Math.random() * 1000
+        }, 1000);
+
+        return {
+            startVal,
+            endVal
+        }
     }
 };
 </script>
@@ -43,6 +57,7 @@ export default {
         color: #ccc;
     }
     .salesValue {
+        padding: 8px;
         font-size: 30px;
     }
     .footer {

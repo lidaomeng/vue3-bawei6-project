@@ -13,9 +13,13 @@ import store from './store'
 // 导入VueEcharts
 import VueEcharts from '@/components/VueEcharts'
 
+// 导入vue-count-to
+import CountTo from '@/components/VueCountTo/vue-countTo.vue';
+
 const app = createApp(App)
 app.use(router) // 使用vue-router插件
 app.use(store) // 使用vue-router插件
 app.use(ElementPlus) // 使用vue-router插件'
 app.component('v-charts', VueEcharts)
+app.component('count-to', CountTo)
 app.mount('#app')
