@@ -73,10 +73,10 @@ export default {
                         },
                         series: [
                             {
-                                type: 'map',
+                                type: 'map', // 地图主要用于地理区域数据的可视化
                                 map: 'china',
                                 label: {
-                                    show: true,
+                                    // show: true,
                                     color: '#fff'
                                 },
                                 data: province.map(item => {
@@ -85,6 +85,19 @@ export default {
                                         value: Math.random() * 100 // 万
                                     }
                                 })
+                            },
+                            {
+                                type: 'effectScatter',
+                                coordinateSystem: 'geo',
+                                data: province.map(item => {
+                                    return {
+                                        value: item.value
+                                    }
+                                }),
+                                symbolSize: 12,
+                                itemStyle: {
+                                    color: 'rgb(246,154,44)'
+                                }
                             }
                         ]
                     }
