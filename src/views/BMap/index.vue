@@ -34,7 +34,8 @@ export default {
                         visualMap: [
                             {
                                 seriesIndex: [0],
-                                
+                                show: true,
+                                color: ['#fff', 'green']
                             }
                         ],
                         geo: {
@@ -74,12 +75,16 @@ export default {
                             {
                                 type: 'map',
                                 map: 'china',
-                                data: [
-                                    {
-                                        key: '新疆',
-                                        value: 100
+                                label: {
+                                    show: true,
+                                    color: '#fff'
+                                },
+                                data: province.map(item => {
+                                    return {
+                                        name: item.key,
+                                        value: Math.random() * 100 // 万
                                     }
-                                ]
+                                })
                             }
                         ]
                     }
