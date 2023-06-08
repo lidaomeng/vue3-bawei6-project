@@ -24,9 +24,12 @@ export default {
                     // 拿到坐标数据
                     const center = data.features.map(item => {
                         return {
-                            [item.properties.name]: item.properties.cp
+                            // [item.properties.name]: item.properties.cp
+                            key: item.properties.name,
+                            value: item.properties.cp
                         }
                     })
+                    console.log('center', center[0].value);
 
                     options.value = {
                         visualMap: {
@@ -74,13 +77,25 @@ export default {
                                 type: 'map',
                                 map: 'jiangsu',
                                 data: center.map(item => {
-                                    const key = Object.keys(item)[0]
+                                    // const key = Object.keys(item)[0]
 
                                     return {
-                                        name: key,
+                                        name: item.key,
                                         value: Math.random() * 100
                                     }
                                 })
+                            },
+                            {
+                                type: 'effectScatter',
+                                data: [{
+                                    value: center[0].value
+                                }],
+                                coordinateSystem: 'geo',
+                                symbolSize: 20,
+                                itemStyle: {
+                                    color: 'red'
+
+                                }
                             }
                         ]
                     }
