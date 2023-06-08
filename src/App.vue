@@ -13,6 +13,7 @@
       <el-button><router-link to="/todolist">TodoList</router-link></el-button>
       <el-button><router-link to="/data-v">Echarts</router-link></el-button>
       <el-button><router-link to="/bmap">百度地图</router-link></el-button>
+      <el-button><router-link to="/timeline">timeline</router-link></el-button>
     </p>
 
     <router-view></router-view>
