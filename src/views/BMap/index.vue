@@ -35,7 +35,7 @@ export default {
                             {
                                 seriesIndex: [0],
                                 show: true,
-                                color: ['#fff', 'green']
+                                color: ['#fff', '#bfa']
                             }
                         ],
                         geo: {
@@ -94,9 +94,24 @@ export default {
                                         value: item.value
                                     }
                                 }),
-                                symbolSize: 12,
+                                symbolSize: () => {
+                                    // 生成随机大小小球
+                                    return Math.random() * 20
+                                },
                                 itemStyle: {
-                                    color: 'rgb(246,154,44)'
+                                    color: () => {
+                                        // 生成随机颜色小球
+                                        let r = Math.floor(Math.random() * 256)
+                                        let g = Math.floor(Math.random() * 256)
+                                        let b = Math.floor(Math.random() * 256)
+                                        return `rgb(${r},${g},${b})`
+                                    }
+                                },
+                                emphasis: {
+                                    label: {
+                                        show: true,
+                                        position: 'top',
+                                    }
                                 }
                             }
                         ]
