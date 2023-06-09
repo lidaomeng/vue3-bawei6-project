@@ -12,6 +12,9 @@ import DataV from '@/views/DataV'
 import TodoList from '@/views/TodoList'
 import BMap from '@/views/BMap'
 import TimeLine from '@/views/TimeLine'
+import RotateEarth from '@/views/RotateEarth'
+import FlightView from '@/views/FlightView'
+import GraphView from '@/views/GraphView'
 
 // 1. 定义一些路由
 const routes = [
@@ -27,6 +30,9 @@ const routes = [
     { path: '/todolist', component: TodoList },
     { path: '/bmap', component: BMap },
     { path: '/timeline', component: TimeLine },
+    { path: '/earth', component: RotateEarth },
+    { path: '/flight', component: FlightView },
+    { path: '/graph', component: GraphView },
 ]
 
 // 2. 创建路由实例并传递 `routes` 配置

@@ -13,6 +13,7 @@ export default {
 
     setup() {
         const options = ref({})
+        const colors = ref(['rgba(254,174,33,.8)', 'rgba(8,186,236,.9)','rgba(233,63,66,.9)'])
 
         const initData = () => {
             fetch('http://www.youbaobao.xyz/datav-res/datav/map.json')
@@ -24,12 +25,11 @@ export default {
                     // 拿到坐标数据
                     const center = data.features.map(item => {
                         return {
-                            // [item.properties.name]: item.properties.cp
                             key: item.properties.name,
                             value: item.properties.cp
                         }
                     })
-                    console.log('center', center[0].value);
+                    console.log('center', center);
 
                     options.value = {
                         visualMap: {
@@ -77,8 +77,6 @@ export default {
                                 type: 'map',
                                 map: 'jiangsu',
                                 data: center.map(item => {
-                                    // const key = Object.keys(item)[0]
-
                                     return {
                                         name: item.key,
                                         value: Math.random() * 100
@@ -87,14 +85,44 @@ export default {
                             },
                             {
                                 type: 'effectScatter',
-                                data: [{
-                                    value: center[0].value
-                                }],
+                                data: center.map(item => {
+                                    return {
+                                        city: item.key,
+                                        value: item.value,
+                                        age: Math.floor(Math.random() * 100)
+                                    }
+                                }),
                                 coordinateSystem: 'geo',
-                                symbolSize: 20,
-                                itemStyle: {
-                                    color: 'red'
+                                symbolSize: 16,
+                                label: {
+                                    emphasis: {
+                                        show: true,
+                                        position: 'top',
+                                        formatter(p) {
+                                            return `{title|${p.data.city}}\n{content|发生xx事件 ${p.data.age}岁}`
+                                        },
+                                        // 背景色
+                                        // backgroundColor: 'rgba(254,174,33,.8)', // 黄
+                                        // backgroundColor: 'rgba(8,186,236,.9)', // 蓝
+                                        backgroundColor: 'rgba(233,63,66,.9)', // 红
+                                        borderRadius: 3,
+                                        lineHeight: 30,
+                                        rich: {
+                                            title: {
+                                                padding: [0, 10, 10, 10],
+                                                color: '#fff'
+                                            },
+                                            content: {
+                                                padding: [10, 10, 0, 10],
+                                                color: '#fff'
+                                            }
+                                        }
+                                    }
 
+                                },
+
+                                itemStyle: {
+                                    color: '#BF40BF'
                                 }
                             }
                         ]

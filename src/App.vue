@@ -14,6 +14,9 @@
       <el-button><router-link to="/data-v">Echarts</router-link></el-button>
       <el-button><router-link to="/bmap">百度地图</router-link></el-button>
       <el-button><router-link to="/timeline">timeline</router-link></el-button>
+      <el-button><router-link to="/earth">旋转地球</router-link></el-button>
+      <el-button><router-link to="/flight">飞线地球</router-link></el-button>
+      <el-button><router-link to="/graph">GL关系图</router-link></el-button>
     </p>
 
     <router-view></router-view>
