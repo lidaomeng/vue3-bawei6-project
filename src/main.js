@@ -1,6 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+// 导入echarts-gl
+import 'echarts-gl'
+
 // 引入element-plus组件库
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'

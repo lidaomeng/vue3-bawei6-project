@@ -89,9 +89,12 @@ export default {
                             {
                                 type: 'effectScatter',
                                 coordinateSystem: 'geo',
+                                // 散点数据
                                 data: province.map(item => {
                                     return {
-                                        value: item.value
+                                        value: item.value, // 坐标
+                                        city: item.key, // 城市
+                                        count: Math.floor(Math.random() * 1000)
                                     }
                                 }),
                                 symbolSize: () => {
@@ -111,6 +114,14 @@ export default {
                                     label: {
                                         show: true,
                                         position: 'top',
+                                        formatter: (params) => {
+                                            return `${params.data.city}\n客户数：${params.data.count}`
+                                        },
+                                        backgroundColor: 'rgba(0,0,255,.6)',
+                                        color: '#fff',
+                                        padding: [5, 10, 5, 10], // 有点特殊
+                                        borderRadius: 5,
+                                        lineHeight: 30
                                     }
                                 }
                             }
