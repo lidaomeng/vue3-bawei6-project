@@ -16,23 +16,23 @@ export default {
         const update = () => {
             options.value = {
                 globe: {
-                    baseTexture: './assets/world.jpg',
-                    heightTexture: './assets/world.jpg',
-                    environment: './assets/bg.jpg',
-                    displacementScale: 0.01,
-                    shading: 'realistic',
-                    realisticMaterial: {
-                        roughness: 0.9
+                    baseTexture: './assets/world.jpg', // 地球的纹理
+                    heightTexture: './assets/world.jpg', // 地球的高度纹理
+                    environment: './assets/bg.jpg', // 环境贴图
+                    displacementScale: 0.01, // 地球顶点位移的大小
+                    shading: 'realistic', // 地球中三维图形的着色效果
+                    realisticMaterial: { // 真实感材质相关的配置项
+                        roughness: 0.9 // 粗糙度
                     },
-                    postEffect: {
+                    postEffect: { // 后处理特效
                         enable: true
                     },
-                    light: {
-                        main: {
-                            intensity: 5,
+                    light: { // 光照
+                        main: { // 主光源
+                            intensity: 5, // 强度
                             shadow: true
                         },
-                        ambient: {
+                        ambient: { // 环境光
                             intensity: 1,
                         }
                     }
