@@ -16,6 +16,7 @@
       <el-button><router-link to="/timeline">timeline组件</router-link></el-button>
       <el-button><router-link to="/earth">3D地球</router-link></el-button>
       <el-button><router-link to="/lines">航线</router-link></el-button>
+      <el-button><router-link to="/scatter">3D散点图</router-link></el-button>
     </p>
 
     <router-view></router-view>

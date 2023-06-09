@@ -14,6 +14,7 @@ import BMap from '@/views/BMap'
 import TimeLine from '@/views/TimeLine'
 import EarthView from '@/views/EarthView'
 import LinesView from '@/views/LinesView'
+import ScatterView from '@/views/ScatterView'
 
 // 1. 定义一些路由
 const routes = [
@@ -31,6 +32,7 @@ const routes = [
     { path: '/timeline', component: TimeLine },
     { path: '/earth', component: EarthView },
     { path: '/lines', component: LinesView },
+    { path: '/scatter', component: ScatterView },
 ]
 
 // 2. 创建路由实例并传递 `routes` 配置
